@@ -1,10 +1,10 @@
 import React from 'react'
 
 // import child components
-import { RandomWalker } from '../../Canvases'
+import MainText from './MainText'
 
 export default () => (
     <>
-        <RandomWalker />
+        <MainText />
     </>
 )
