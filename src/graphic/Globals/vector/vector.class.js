@@ -42,6 +42,18 @@ export default class Vector extends Graphic {
     this.y = Math.sin(ang) * hyp
     return this
   }
+  // limit vector values
+  limit(limiter) {
+    if (this.x > limiter) {
+      this.y = (this.y / this.x) * limiter
+      this.x = limiter
+    }
+    else if (this.y > limiter) {
+      this.x = (this.x / this.y) * limiter
+      this.y = limiter
+    }
+    return this
+  }
   /* ****
     DATA METHODS
   **** */
@@ -55,5 +67,12 @@ export default class Vector extends Graphic {
     if (mode === 'DEG' || mode === 'DEGS' || mode === 'D' || mode === 'DEGREES' || mode === 'DEGREE') {
       return angle * (180 / Math.PI)
     }
+  }
+
+  _mag(curr, dest) {
+    let xDiff = Math.abs(curr.x - dest.x)
+    let yDiff = Math.abs(curr.y - dest.y)
+
+    return Math.sqrt((xDiff * xDiff) + (yDiff * yDiff))
   }
 }

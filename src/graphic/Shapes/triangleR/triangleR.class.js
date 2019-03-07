@@ -1,14 +1,16 @@
-import Graphic from '../../Graphic'
+import Shape from '../Shape.class'
 import Vector from '../../Globals/vector/vector.class'
 
 // RIGHT-ANGLE TRIANGLE
-export default class TraingleR extends Graphic {
-  constructor(ctx, x, y, base, height) {
+export default class TraingleR extends Shape {
+  constructor(ctx, x, y, base, height, forces) {
     super()
     this.ctx = ctx
-    this.pos = new Vector(x, y)
     this.base = base
     this.height = height
+    this.pos = new Vector(x, y)
+    this.vel = new Vector(forces.vel.x, forces.vel.y)
+    this.acc = new Vector(forces.acc.x, forces.acc.y)
   }
   /* ****
     DESIGN METHODS

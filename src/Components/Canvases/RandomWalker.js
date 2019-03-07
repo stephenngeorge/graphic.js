@@ -41,18 +41,18 @@ export default () => {
                     let colourX = helpers._map(pos.x, 0, width, 0, 255)
                     let colourY = helpers._map(pos.y, 0, height, 0, 255)
                     // draw circle with values determined above
-                    shapes.circle(c, pos.x, pos.y, unit).draw(`rgba(${colourX}, ${colourY}, 0, .6)`)
+                    shapes.circle(c, pos.x, pos.y, unit).draw(`rgba(${colourX}, 0, ${colourY}, .6)`)
                 })
                 
                 // randomly create vector to be added to ball position
                 let dir = Math.random()
-                if (dir <= .25) walker.vel = globals.vector(0, unit * 2)
-                else if (dir <= .5) walker.vel = globals.vector(unit * 2, 0)
-                else if (dir <= .75) walker.vel = globals.vector(0, -unit * 2)
-                else walker.vel = globals.vector(-unit * 2, 0)
+                if (dir <= .25) walker.acc = globals.vector(0, unit * 2)
+                else if (dir <= .5) walker.acc = globals.vector(unit * 2, 0)
+                else if (dir <= .75) walker.acc = globals.vector(0, -unit * 2)
+                else walker.acc = globals.vector(-unit * 2, 0)
 
                 // draw ball at new position
-                walker.pos.add(walker.vel)
+                walker.move()
                 walker
                     .draw('#333')
                     .outline({ weight: 2, colour: '#fff' })

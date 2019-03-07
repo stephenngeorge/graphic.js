@@ -1,4 +1,4 @@
-import Rect from '../../Shapes/rect/rect.class'
+import rect from '../../Shapes/rect/rect'
 
 // draw fill rectangle full size of canvas, colour default to light grey
 export default function bgSolid(ctx, colour = '#e7e7e7', anchor = 'top-left') {
@@ -7,10 +7,10 @@ export default function bgSolid(ctx, colour = '#e7e7e7', anchor = 'top-left') {
   let bg = null
   switch (anchor) {
     case 'top-left':
-      bg = new Rect(ctx, 0, 0, canvasWidth, canvasHeight).draw(colour)
+      bg = rect(ctx, 0, 0, canvasWidth, canvasHeight).draw(colour)
       break
     case 'centre':
-      bg = new Rect(ctx, -canvasWidth * .5, -canvasHeight * .5, canvasWidth, canvasHeight).draw(colour)
+      bg = rect(ctx, -canvasWidth * .5, -canvasHeight * .5, canvasWidth, canvasHeight).draw(colour)
       break
     default: console.log({
       status: 'ERROR',

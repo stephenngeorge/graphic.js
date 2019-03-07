@@ -1,14 +1,16 @@
-import Graphic from '../../Graphic'
+import Shape from '../Shape.class'
 import Vector from '../../Globals/vector/vector.class'
 
 // EQUILATERAL TRIANGLE
-export default class TraingleE extends Graphic {
-  constructor(ctx, x, y, side) {
+export default class TraingleE extends Shape {
+  constructor(ctx, x, y, side, forces) {
     super()
     this.ctx = ctx
-    this.pos = new Vector(x, y)
     this.side = side
     this.height = Math.sqrt((this.side * this.side) - ((this.side * .5) * (this.side * .5)))
+    this.pos = new Vector(x, y)
+    this.vel = new Vector(forces.vel.x, forces.vel.y)
+    this.acc = new Vector(forces.acc.x, forces.acc.y)
   }
   /* ****
     DESIGN METHODS
