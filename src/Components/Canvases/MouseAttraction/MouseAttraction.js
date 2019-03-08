@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import g from '../../graphic'
+import g from '../../../graphic'
 
 import './MouseAttraction.css'
 

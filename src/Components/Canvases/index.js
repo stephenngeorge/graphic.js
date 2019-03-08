@@ -1,4 +1,4 @@
-import MouseAttraction from './MouseAttraction'
+import MouseAttraction from './MouseAttraction/MouseAttraction'
 import RandomWalker from './RandomWalker'
 
 export {
