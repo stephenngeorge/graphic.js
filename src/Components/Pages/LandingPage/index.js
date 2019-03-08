@@ -2,11 +2,11 @@ import React from 'react'
 
 // import child components
 import MainText from './MainText'
-import RandomWalker from '../../Canvases/RandomWalker'
+import { MouseAttraction } from '../../Canvases'
 
 export default () => (
     <>
         <MainText />
-        <RandomWalker />
+        <MouseAttraction />
     </>
 )
