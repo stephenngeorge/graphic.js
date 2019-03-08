@@ -1,7 +1,7 @@
 import React from 'react'
 
 // import child components
-import MainText from './MainText'
+import MainText from './MainText/MainText'
 import { MouseAttraction } from '../../Canvases'
 
 export default () => (
