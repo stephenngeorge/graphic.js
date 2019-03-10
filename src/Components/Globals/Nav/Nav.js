@@ -6,6 +6,7 @@ import './Nav.css'
 // import assets
 import {
     about_icon,
+    add_icon,
     contact_icon,
     examples_icon,
     home_icon,
@@ -13,9 +14,17 @@ import {
 } from '../../../assets'
 
 export default () => {
+
+    const toggleActive = () => {
+        let navWrapper = document.querySelector('.nav__wrapper')
+        if (navWrapper !== null) navWrapper.classList.toggle('nav__active')
+    }
+
     return (
         <div className='nav__wrapper'>
-            <button className='btn__nav'>menu</button>
+            <button className='btn__nav' onClick={ toggleActive }>
+                <img src={ add_icon } alt='menu toggle' />
+            </button>
             <ul className='nav'>
                 <li className='nav__item'>
                     <Link to='/' className='nav__item--link'>
@@ -27,7 +36,7 @@ export default () => {
                 <li className='nav__item'>
                     <Link to='/philosophy' className='nav__item--link'>
                         <img src={ about_icon } alt='philosophy' />
-                        <p>philosophy</p>
+                        <p>about</p>
                     </Link>
                 </li>
 
