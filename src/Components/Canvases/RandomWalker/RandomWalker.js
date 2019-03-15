@@ -1,7 +1,22 @@
-import React, { useEffect } from 'react'
-import g from '../../graphic'
+import React, { useEffect, useState } from 'react'
+import g from '../../../graphic'
 
-export default () => {
+import './RandomWalker.css'
+
+export default ({ fullscreen }) => {
+
+    let [windowWidth, setWindowWidth] = useState(window.innerWidth)
+    let [windowHeight, setWindowHeight] = useState(window.innerHeight)
+
+    useEffect(() => {
+        let setWindowDimensions = () => {
+            setWindowWidth(window.innerWidth)
+            setWindowHeight(window.innerHeight)
+        }
+        window.addEventListener('resize', setWindowDimensions)
+        // cleanup --> remove event listener
+        return () => { window.removeEventListener('resize', setWindowDimensions) }
+    }, [windowWidth, windowHeight])
 
     useEffect(() => {
         const container = document.querySelector('.canvas-container__random-walker')
@@ -16,8 +31,8 @@ export default () => {
         if (container !== null) {
             // define canvas & get context, width & height variables
             const { c, width, height } = structure.canvas({
-                width: 400,
-                height: 400,
+                width: container.offsetWidth,
+                height: container.offsetHeight,
                 id: 'random-walker',
                 el: container
             })
@@ -60,9 +75,10 @@ export default () => {
                     .wrapY(0 + walker.r, height - walker.r)
             }, 10) // <-- end of animate()
         } // <-- end of if (container !== null)
-    }, []) // <-- end of useEffect()
+    }, [windowWidth, windowWidth]) // <-- end of useEffect()
 
+    let isFullscreen = !!fullscreen ? 'fullscreen' : 'not-fullscreen'
     return (
-        <div className='canvas-container__random-walker'></div>
+        <div className={`canvas-container__random-walker ${isFullscreen}`}></div>
     )
 }

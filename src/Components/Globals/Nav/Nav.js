@@ -26,35 +26,35 @@ export default () => {
                 <img src={ add_icon } alt='menu toggle' />
             </button>
             <ul className='nav'>
-                <li className='nav__item'>
+                <li className='nav__item' onClick={ toggleActive }>
                     <Link to='/' className='nav__item--link'>
                         <img src={ home_icon } alt='home' />
                         <p>home</p>
                     </Link>
                 </li>
 
-                <li className='nav__item'>
+                <li className='nav__item' onClick={ toggleActive }>
                     <Link to='/philosophy' className='nav__item--link'>
                         <img src={ about_icon } alt='philosophy' />
                         <p>about</p>
                     </Link>
                 </li>
 
-                <li className='nav__item'>
+                <li className='nav__item' onClick={ toggleActive }>
                     <Link to='/examples' className='nav__item--link'>
                         <img src={ examples_icon } alt='examples' />
                         <p>examples</p>
                     </Link>
                 </li>
 
-                <li className='nav__item'>
+                <li className='nav__item' onClick={ toggleActive }>
                     <a target="_blank" rel='noopener noreferrer' href="https://github.com/stephenngeorge/graphicjs" className='nav__item--link'>
                         <img src={ repo_icon } alt='repo' />
                         <p>source code</p>
                     </a>
                 </li>
 
-                <li className='nav__item'>
+                <li className='nav__item' onClick={ toggleActive }>
                     <Link to='/contact' className='nav__item--link'>
                         <img src={ contact_icon } alt='contact' />
                         <p>contact</p>

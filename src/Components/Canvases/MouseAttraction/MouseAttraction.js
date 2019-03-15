@@ -3,7 +3,7 @@ import g from '../../../graphic'
 
 import './MouseAttraction.css'
 
-export default () => {
+export default ({ fullscreen }) => {
     // set state to track dimensions of the window/viewport
     let [windowWidth, setWindowWidth] = useState(window.innerWidth)
     let [windowHeight, setWindowHeight] = useState(window.innerHeight)
@@ -77,8 +77,9 @@ export default () => {
     }, [windowWidth, windowHeight]) // <-- run when window dimensions change
     // ensures canvas will always be full screen & will be redrawn to fit new viewport size
 
+    let isFullscreen = !!fullscreen ? 'fullscreen' : 'not-fullscreen'
     return (
-        <div className='canvas-container__mouse-attraction'></div>
+        <div className={`canvas-container__mouse-attraction ${isFullscreen}`}></div>
     )
 
 }

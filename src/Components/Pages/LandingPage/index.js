@@ -7,6 +7,6 @@ import { MouseAttraction } from '../../Canvases'
 export default () => (
     <>
         <MainText />
-        <MouseAttraction />
+        <MouseAttraction fullscreen={ true } />
     </>
 )

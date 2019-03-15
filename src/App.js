@@ -5,7 +5,7 @@ import './App.css'
 // import globals
 import { Nav } from './components/Globals'
 // import pages
-import { LandingPage } from './components/Pages'
+import { ExamplesPage, LandingPage } from './components/Pages'
 
 export default () => (
   <Router>
@@ -13,6 +13,7 @@ export default () => (
 
       <Nav />  
       <Route exact path='/' component={ LandingPage }/>
+      <Route path='/examples' component={ ExamplesPage } />
 
     </div>
   </Router>
