@@ -11,6 +11,7 @@ export default props => {
         document.querySelector('.example-card').classList.toggle('flipped')
     }
 
+    let { children, data } = props
     return (
         <div className='wrapper'>
             <button className='btn__toggle' onClick={ flip }>
@@ -18,9 +19,13 @@ export default props => {
             </button>
             <div className='example-card'>
                 <div className='example-card__front'>{
-                    props.children
+                    children
                 }</div>
                 <div className='example-card__back'>BACKFACE</div>
+            </div>
+            <div className='example-info'>
+                <h2>{ data.title }</h2>
+                <p>{ data.description }</p>
             </div>
         </div>
     )

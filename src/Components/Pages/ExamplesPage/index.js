@@ -1,15 +1,19 @@
 import React from 'react'
+import { Route } from 'react-router-dom'
 
 import './page.css'
+import data from './data'
 
 // import child components
 import Example from './Example'
-import { MouseAttraction, RandomWalker } from '../../Canvases'
+import { RandomWalker } from '../../Canvases'
 
 export default () => (
     <div className='page page__examples'>
-        <Example>
-            <RandomWalker />
-        </Example>
+        <Route path='/examples/random-walker' render={() => (
+            <Example data={ data.walker }>
+                <RandomWalker />
+            </Example>
+         )} />
     </div>
 )
