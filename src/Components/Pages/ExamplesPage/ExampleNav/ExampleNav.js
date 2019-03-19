@@ -12,5 +12,9 @@ export default () => (
             <img src={ play_icon } alt='select' />
             <Link to='/examples/random-walker'>Random Walker</Link>
         </li>
+        <li className='example-nav__item'>
+            <img src={ play_icon } alt='select' />
+            <Link to='/examples/mouse-attraction'>Mouse Attraction</Link>
+        </li>
     </ul>
 )
