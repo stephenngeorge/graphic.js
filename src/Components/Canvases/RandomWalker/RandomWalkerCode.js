@@ -13,6 +13,7 @@ export default () => (
             <br />{'}'} <span className='keyword'>=</span> g
         </p>
         <p><span className='keyword'>const</span> container <span className='keyword'>=</span> <span className='secondary'>document</span>.<span className='tertiary'>querySelector</span>('<span className='string'>.canvas-container__random-walker</span>')</p>
+        <br />
         <p><span className='keyword'>if</span> (container <span className='keyword'>!==</span> <span className='secondary'>null</span>) {'{'}<br />
             <span className='comment indent-1'>{'// define canvas & get context, width & height variables'}</span><br />
             <span className='keyword indent-1'>const</span> {'{'} c, width, height {'}'} <span className='keyword'>=</span> <span className='secondary'>structure</span>.<span className='tertiary'>canvas</span>({'{'}<br />

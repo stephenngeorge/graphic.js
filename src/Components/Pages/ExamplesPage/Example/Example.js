@@ -1,7 +1,7 @@
 import React from 'react'
 
 // import assets
-import { repo_icon } from '../../../assets'
+import { repo_icon } from '../../../../assets'
 
 import './Example.css'
 
