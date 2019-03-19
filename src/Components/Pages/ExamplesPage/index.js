@@ -6,13 +6,14 @@ import data from './data'
 
 // import child components
 import Example from './Example'
-import { RandomWalker } from '../../Canvases'
+import { RandomWalker, RandomWalkerCode } from '../../Canvases'
 
 export default () => (
     <div className='page page__examples'>
         <Route path='/examples/random-walker' render={() => (
             <Example data={ data.walker }>
                 <RandomWalker />
+                <RandomWalkerCode />
             </Example>
          )} />
     </div>

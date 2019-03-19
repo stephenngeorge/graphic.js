@@ -19,9 +19,11 @@ export default props => {
             </button>
             <div className='example-card'>
                 <div className='example-card__front'>{
-                    children
+                    children[0]
                 }</div>
-                <div className='example-card__back'>BACKFACE</div>
+                <div className='example-card__back'>{
+                    children[1]
+                }</div>
             </div>
             <div className='example-info'>
                 <h2>{ data.title }</h2>
