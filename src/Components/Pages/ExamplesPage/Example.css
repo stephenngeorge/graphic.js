@@ -36,7 +36,6 @@
 .example-card__back
 {
     transform: rotateY(180deg);
-    overflow-x: scroll;
 }
 
 
@@ -76,6 +75,10 @@
 .flipped
 {
     transform: rotateY(180deg);
+}
+.flipped > .example-card__back
+{
+    overflow-x: scroll;
 }
 
 .example-info
