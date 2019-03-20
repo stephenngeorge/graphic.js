@@ -79,6 +79,7 @@
 .flipped > .example-card__back
 {
     overflow-x: scroll;
+    overflow-y: scroll;
 }
 
 .example-info

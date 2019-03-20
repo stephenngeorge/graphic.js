@@ -33,7 +33,6 @@ export default ({ fullscreen }) => {
             } = g
             // define canvas & get context, width & height variables
             const { c, width, height } = structure.canvas({
-                // get canvas dimensions from parent div (defined as 100vw, 100vh)
                 width: container.offsetWidth,
                 height: container.offsetHeight,
                 id: 'canvas',

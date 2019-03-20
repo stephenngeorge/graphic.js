@@ -7,7 +7,7 @@ import data from './data'
 // import child components
 import ExampleNav from './ExampleNav/ExampleNav'
 import Example from './Example/Example'
-import { MouseAttraction, RandomWalker, RandomWalkerCode } from '../../Canvases'
+import { MouseAttraction, MouseAttractionCode, RandomWalker, RandomWalkerCode } from '../../Canvases'
 
 export default () => (
     <div className='page page__examples'>
@@ -21,7 +21,7 @@ export default () => (
          <Route path='/examples/mouse-attraction' render={() => (
              <Example data={ data.mouse }>
                 <MouseAttraction />
-                <RandomWalkerCode />
+                <MouseAttractionCode />
              </Example>
          )} />
     </div>
