@@ -53,7 +53,9 @@ export default ({ fullscreen }) => {
                 let target = globals.vector(mousePos.x, mousePos.y)
                 // point each ball at the mouse position vector & scale down relative to ball size
                 balls.forEach(ball => {
-                    ball.acc = target.copy().sub(ball.pos).mult(1 / ball.r)
+                    //ball.acc = target.copy().sub(ball.pos).mult(.5 / ball.r)
+                    ball.applyForce(target.copy().sub(ball.pos).mult(1 / ball.r))
+                    ball.vel = globals.vector(0, 0)
                 })
             })
 

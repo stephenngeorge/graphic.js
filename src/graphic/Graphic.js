@@ -65,12 +65,22 @@ export default class Graphic {
   **** */
   // restrict possible movement of shapes on x axis
   boundX(min, max) {
-    if (this.pos.x >= max || this.pos.x <= min) this.vel.x *= -1
+    if (this.pos.x >= max) {
+      if (this.acc.x > 0) this.acc.x *= -1
+    }
+    else if (this.pos.x <= min) {
+      if (this.acc.x < 0) this.acc.x *= -1
+    }
     return this
   }
   // restrict possible movement of shapes on y axis
   boundY(min, max) {
-    if (this.pos.y >= max || this.pos.y <= min) this.vel.y *= -1
+    if (this.pos.y >= max) {
+      if (this.acc.y > 0) this.acc.y *= -1
+    }
+    else if (this.pos.y <= min) {
+      if (this.acc.y < 0) this.acc.y *= -1
+    }
     return this
   }
   wrapX(min, max) {
@@ -81,6 +91,30 @@ export default class Graphic {
   wrapY(min, max) {
     if (this.pos.y >= max) this.pos.y = min
     else if (this.pos.y <= min) this.pos.y = max
+    return this
+  }
+  // similar to boundX & boundY but simulates collision by reducing acceleration
+  bounceX(min, max, multiplier) {
+    if (this.pos.x >= max) {
+      if (this.vel.x > 0) this.vel.x *= -multiplier
+      if (Math.abs(this.vel.x) < .1) this.static = true 
+    }
+    else if (this.pos.x <= min) {
+      if (this.vel.x < 0) this.vel.x *= -multiplier
+      if (Math.abs(this.vel.x) < .1) this.static = true
+    }
+    return this
+  }
+
+  bounceY(min, max, multiplier) {
+    if (this.pos.y >= max) {
+      if (this.vel.y > 0) this.vel.y *= -multiplier
+      if (Math.abs(this.vel.y) < .1) this.static = true
+    }
+    else if (this.pos.y <= min) {
+      if (this.vel.y < 0) this.vel.y *= -multiplier
+      if (Math.abs(this.vel.y) < .1) this.static = true
+    }
     return this
   }
 }

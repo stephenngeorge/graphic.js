@@ -68,6 +68,7 @@ export default ({ fullscreen }) => {
 
                 // draw ball at new position
                 walker.move()
+                walker.vel = globals.vector(0, 0)
                 walker
                     .draw('#333')
                     .outline({ weight: 2, colour: '#fff' })

@@ -6,5 +6,9 @@ export default {
     mouse: {
         title: 'mouse attraction',
         description: 'Array of circles are attracted to the mouse position. The strength of the attraction force is correlated to the circle radius'
+    },
+    forces: {
+        title: 'forces',
+        description: 'Click to create a circle upon which wind & gravity both act. This is simple mockup of force accumulation'
     }
 }

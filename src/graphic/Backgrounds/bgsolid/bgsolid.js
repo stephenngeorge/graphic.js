@@ -1,7 +1,7 @@
 import rect from '../../Shapes/rect/rect'
 
 // draw fill rectangle full size of canvas, colour default to light grey
-export default function bgSolid(ctx, colour = '#e7e7e7', anchor = 'top-left') {
+export default (ctx, colour = '#e7e7e7', anchor = 'top-left') => {
   let canvasWidth = ctx.canvas.clientWidth
   let canvasHeight = ctx.canvas.clientHeight
   let bg = null
